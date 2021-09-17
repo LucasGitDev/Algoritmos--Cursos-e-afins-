@@ -2,13 +2,13 @@
 
 using namespace std;
 
-//1581 URI
-//Algoritmo de busca usando técnica de HASH
+//1582 URI
+//Algoritmo de remoção usando técnica de HASH
 
 struct dado
 {
     int k;      // chave
-    int status; // 0:vazio / 1:ocupado
+    int status; // 0-vazio, 1-ocupado, 2-removido
 };
 
 //Determina primeira posição dada a chave e tamanho do vetor
@@ -63,6 +63,20 @@ int hash_search(dado t[], int m, int k)
 
     return -1;
 }
+//Função de remoção em técnica HASH
+int hash_remove(dado t[], int m, int k)
+{
+    int j;
+
+    j = hash_search(t, m, k);
+
+    if(j != -1) {
+        t[j].status = 2;
+        t[j].k = -1;
+        return 0; //conseguiu remover
+    }else
+        return -1; // k não está na tabela
+}
 
 int main()
 {
@@ -70,8 +84,7 @@ int main()
     int n;              // tamanho do vetor
     dado table[100];    // tabela de valores
     int i;              // contador
-    int resultOfSearch; // Resultado da busca pelo elemento
-    int elem;           //Elemento à ser pesquisado
+    int elem;           // valor a remover
     cin >> n;
 
     // iniciando tabela
@@ -89,17 +102,18 @@ int main()
         cin >> value;
     }
 
-    // Pesquisar elemento
+    //Leitura do elemento a ser removido
     cin >> elem;
 
-    resultOfSearch = hash_search(table, n, elem);
+    //Tentativa de remoção
+    //Valor retornado pode ser testado
+    hash_remove(table, n, elem);
 
-    // Show result of search
-
-    if (resultOfSearch == -1)
-        cout << "Chave " << elem << " nao encontrada\n";
-    else
-        cout << "Chave " << elem << " encontrada na posicao " << resultOfSearch << endl;
+    //Amostragem da tabela pós tentativa de remoção
+    cout << table[0].k;
+    for(i = 1; i < n; i++) 
+        cout << " " << table[i].k;
+    cout << endl;
 
     return 0;
 }
