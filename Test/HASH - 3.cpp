@@ -9,7 +9,7 @@ struct dado
 };
 
 //Determina primeira posição para a chave e tamanho do vetor
-int hash_aux(int k, int m)
+int gen_hash(int k, int m)
 {
     return (k % m);
 }
@@ -17,7 +17,7 @@ int hash_aux(int k, int m)
 //retorna posição para a chave
 int h(int k, int i, int m)
 {
-    return ((hash_aux(k, m) + i) % m);
+    return ((gen_hash(k, m) + i) % m);
 }
 // Função de inserção hash
 int hash_insert(dado t[], int m, int k)

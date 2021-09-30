@@ -3,7 +3,7 @@
 using namespace std;
 
 // Fun��o que retorna k mod m
-int hash_aux(int k, int m)
+int gen_hash(int k, int m)
 {
 	int aux;
 	aux = k % m;
@@ -21,7 +21,7 @@ int main()
 	// Leitura de dados e acionamento da fun��o
 	cin >> k >> m;
 	while(k != 0 && m != 0){
-		cout << hash_aux(k, m) << endl;
+		cout << gen_hash(k, m) << endl;
 		cin >> k >> m;
 	}
 	
