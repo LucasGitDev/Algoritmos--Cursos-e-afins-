@@ -19,6 +19,7 @@ int main() {
     int i; // contador
     no aux; // auxiliar para inserir arestas em adj
     list<no>::iterator q; // iterador para percorrer lista de adjacência
+    int orientado = 0; // grafo 1:orientado 0:não-orientado
 
     //Lendo e inserindo aresta
     for(i = 0; i < nVertices; i++) {
@@ -26,6 +27,10 @@ int main() {
         aux.v = v;
         aux.peso = p;
         adj[u].push_back(aux);
+        if (orientado == 0) {
+            aux.v = u;
+            adj[v].push_back(aux);
+        }
     }
 
     //Mostrando a lista de adjacência
