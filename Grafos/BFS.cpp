@@ -53,7 +53,7 @@ void cria_aresta(list<no> adj[], int u, int v, int p, int orientado)
     novo.v = v;
     novo.peso = p;
     adj[u].push_back(novo);
-    if (orientado == 0)
+    if (orientado == 0) // se não for orientado
     {
         novo.v = u;
         adj[v].push_back(novo);
@@ -80,6 +80,17 @@ int main(){
     	cria_aresta(adj, u, v, p, 0);
         cin >> u >> v >> p;        
     }
+
+    // // imprimir valores de adj
+    // for (i = 0; i < nVertices; i++)
+    // {
+    //     cout << "Vertice " << i << ": ";
+    //     for (q = adj[i].begin(); q != adj[i].end(); q++)
+    //     {
+    //         cout << q->v << " ";
+    //     }
+    //     cout << endl;
+    // }
 
     //Mostrando a lista de adjacência
     bfs(adj, nVertices, inicial);
