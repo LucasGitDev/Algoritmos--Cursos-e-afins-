@@ -81,11 +81,7 @@ void ordenacao_topologica(int f[], int nVertices)
     for (i = 0; i < nVertices; i++)
     {
         ordenado[i] = f[i];
-        cout << ordenado[i] << " ";
     }
-
-    cout << endl;
-
     quickSortDesc(ordenado, nVertices, 0, nVertices - 1);
 
     // for (i = nVertices - 1; i >= 0; i--)

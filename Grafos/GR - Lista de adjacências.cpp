@@ -44,11 +44,20 @@ int main()
     }
 
     //Mostrando a lista de adjacência
+    // for (i = 0; i < nVertices; i++)
+    // {
+    //     for (q = adj[i].begin(); q != adj[i].end(); q++)
+    //     {
+    //         cout << i << " " <<  q->v << " " << q->peso << endl;
+    //     }
+    // }
+
+    // Imprimir a lista de adjacência de acordo com os vertices
     for (i = 0; i < nVertices; i++)
     {
         for (q = adj[i].begin(); q != adj[i].end(); q++)
         {
-            cout << i << " " <<  q->v << " " << q->peso << endl;
+            cout << i << " -- " <<  q->v << " p:" << q->peso << endl;
         }
     }
 
