@@ -32,16 +32,15 @@ int *ponteiro;
 ponteiro = &var
 
 cout << ponteiro << endl; // saída: endereço de memória em hexadecimal
+
+cout << *ponteiro << endl; // saída: valor de var (numero inteiro qualquer)
 ```
 
 ---
 
-
-
 <h4>Listas Ligadas</h4>
 
 ![1637537259645.png](image/Exp/1637537259645.png)
-
 
 <h5>Queue - Fila</h5>
 
@@ -73,8 +72,6 @@ pilha.pop_front() // remove valor da pilha
 
 ---
 
-
-
 <h3>Grafos</h3>
 
 Entender sobre conceitos de Grafos e tipos.
@@ -83,10 +80,8 @@ Entender sobre conceitos de Grafos e tipos.
 
 **BFS**
 
-
 <h6>Busca em profundidade</h6>
 
 **DFS**
-
 
 <h5>DIJKSTRA</h5>
